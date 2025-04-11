@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dropdown Iframe Viewer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-image: url('https://static.vecteezy.com/system/resources/previews/006/712/985/non_2x/abstract-health-medical-science-healthcare-icon-digital-technology-science-concept-modern-innovation-treatment-medicine-on-hi-tech-future-blue-background-for-wallpaper-template-web-design-vector.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    table {
+      width: 50%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.9); /* semi-transparent background */
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: 2px solid #477fac;
+    }
+
+    select {
+      padding: 8px;
+      font-size: 16px;
+      color: rgb(28, 114, 226);
+
+    }
+
+    h2 {
+      color: white;
+      text-shadow: 1px 1px 4px #2f3287;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>MEDISAKA Medical Appointment</h2>
+  <select id="iframeSelector" onchange="updateIframe()">
+    <option value=""> -- Analytics --</option>
+    <option value=""C:\Users\justine\Downloads\1234"">Patient Count</option>
+    <option value="https://www.wikipedia.org">Wikipedia</option>
+    <option value="https://www.openai.com">OpenAI</option>
+  </select>
+
+  <table border="1">
+    <tr>
+      <td>
+        <iframe id="displayFrame" src=""></iframe>
+      </td>
+    </tr>
+  </table>
+
+  <script>
+    function updateIframe() {
+      const selector = document.getElementById("iframeSelector");
+      const iframe = document.getElementById("displayFrame");
+      iframe.src = selector.value;
+    }
+  </script>
+
+</body>
+</html>
